@@ -1,3 +1,8 @@
+// Electronアプリケーションのメニューに関する定義を含むJavaScriptモジュールです。
+// このモジュール内には、アプリケーションメニューやコンテキストメニュー、編集メニュー、
+// ヘルプメニューなどのテンプレートが含まれています。
+
+
 'use strict';
 
 const { app, BrowserWindow, clipboard, dialog, shell } = require('electron');

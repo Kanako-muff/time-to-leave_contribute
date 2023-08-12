@@ -1,3 +1,6 @@
+// Electronアプリケーションのメインウィンドウを管理し、メニューやトレイなどの機能を制御するための
+// JavaScriptモジュールのようです。
+
 'use strict';
 
 const { app, BrowserWindow, dialog, ipcMain, Menu, shell, Tray } = require('electron');

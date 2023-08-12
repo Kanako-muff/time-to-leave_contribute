@@ -1,3 +1,7 @@
+// Electronアプリ内でカレンダーを表示し、
+// カレンダーに関連するイベント処理や通知設定を行うためのJavaScriptモジュール
+
+
 'use strict';
 
 const { ipcRenderer } = require('electron');

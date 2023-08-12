@@ -1,3 +1,8 @@
+// Electronアプリケーション内で通知を処理するためのモジュールです。
+// このモジュールでは、メインプロセスとの間で通知情報を受け渡すためのIPC
+// （Inter-Process Communication）を使用しています。
+
+
 const { ipcRenderer } = require('electron');
 
 const searchLeaveByElement = (event) =>

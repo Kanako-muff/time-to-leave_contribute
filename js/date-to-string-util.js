@@ -1,3 +1,6 @@
+// JavaScriptモジュールで日付や月の略語や名称を取得するためのユーティリティ関数を提供している
+
+
 'use strict';
 
 import { getTranslationInLanguageData } from '../renderer/i18n-translator.js';

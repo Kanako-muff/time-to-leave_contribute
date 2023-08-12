@@ -1,3 +1,5 @@
+// アプリケーションの設定データを管理し、Renderer プロセスからの変更要求に応じてそれを反映させる役割を持ちます。
+
 'use strict';
 const { changeLanguage } = require('../src/configs/i18next.config');
 
