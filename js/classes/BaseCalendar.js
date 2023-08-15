@@ -139,13 +139,34 @@ class BaseCalendar
      * Returns the code of the table footer of the calendar.
      * @return {string}
      */
-    _generateTableFooter()
-    {
-        return '<button class="punch-button" id="punch-button" disabled>' +
-                   '<img src="assets/fingerprint.svg" height="36" width="36"></img>' +
-                   `<label for="punch-button" id="punch-button-label">${this._getTranslation('$Menu.punch-time')}</label>` +
-               '</button>\n';
+    _generateTableFooter() {
+        const footerDiv = document.createElement('div');
+        footerDiv.classList.add('button-container');
+    
+        const punchButton = document.createElement('button');
+        punchButton.classList.add('punch-button');
+        punchButton.id = 'punch-button';
+        punchButton.disabled = true;
+    
+        const punchButtonLabel = document.createElement('label');
+        punchButtonLabel.htmlFor = 'punch-button';
+        punchButtonLabel.id = 'punch-button-label';
+        punchButtonLabel.textContent = this._getTranslation('$Menu.punch-time');
+    
+        punchButton.appendChild(punchButtonLabel);
+    
+        const invoiceButton = document.createElement('button');
+        invoiceButton.classList.add('invoice-button');
+        invoiceButton.id = 'invoice-button';
+        invoiceButton.textContent = 'Invoice';
+    
+        footerDiv.appendChild(punchButton);
+        footerDiv.appendChild(invoiceButton);
+    
+        return footerDiv.outerHTML;
     }
+    
+
 
     /**
      * Updates the code of the table footer of the calendar, to be called on demand.

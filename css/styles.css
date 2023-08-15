@@ -423,6 +423,19 @@ body {
   margin: auto;
 }
 
+/* 既存のスタイル */
+
+/* ボタンコンテナのスタイル */
+.button-container {
+  display: flex; /* 横並びに配置するために flexbox を使用 */
+  /* justify-content: space-between; ボタン間のスペースを均等に配置 */
+  /* align-items: center; ボタンを垂直方向に中央揃え */
+}
+
+/* 既存のスタイル */
+
+
+
 .punch-button:disabled #punch-button-label {
   cursor: default;
 }

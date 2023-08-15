@@ -9,6 +9,13 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div id="calendar" class="container"></div>
+    <div id="footer" class="footer">
+        <button id="invoice-button">Invoice</button>
+    </div>
 
     <!-- Scripts -->
     <!-- First we need to declare jQuery and $ globals with jquery -->
@@ -19,11 +26,41 @@
         require('electron');</script>
     <script type="module" src="js/calendar.js" charset="utf-8"></script>
     <script type="module" src="js/notification-channel.js" charset="utf-8"></script>
-</head>
+    <script>
+        // Dev tool
+        document.addEventListener('keydown', (event) => {
+            // Ctrl + Shift + I (or Cmd + Option + I on macOS)
+            if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'I') {
+                require('electron').remote.getCurrentWindow().webContents.openDevTools();
+                event.preventDefault();
+            }
+        });
 
-<body>
-    <div id="calendar" class="container"></div>
-    <div id="footer" class="footer"></div>
+        document.addEventListener('DOMContentLoaded', () => {
+            const createInvoiceButton = document.getElementById('invoice-button');
+            console.log(createInvoiceButton);
+
+            createInvoiceButton.addEventListener('click', () => {
+                console.log("You clicked!");
+
+                // BrowserWindowはここでインポートして使う
+                const { BrowserWindow } = require('electron');
+
+                function openInvoiceWindow() {
+                    const invoiceWindow = new BrowserWindow({
+                        width: 800,
+                        height: 600,
+                        webPreferences: {
+                            nodeIntegration: true
+                        }
+                    });
+                    invoiceWindow.loadFile('src/invoice.html');
+                }
+
+                openInvoiceWindow(); // クリック時にウィンドウを開く
+            });
+        });
+    </script>
 </body>
 
 </html>
