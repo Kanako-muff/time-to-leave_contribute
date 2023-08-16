@@ -9,12 +9,12 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/classes/BaseCalendar.js"></script>
 </head>
 
 <body>
     <div id="calendar" class="container"></div>
     <div id="footer" class="footer">
-        <button id="invoice-button">Invoice</button>
     </div>
 
     <!-- Scripts -->
@@ -35,7 +35,6 @@
                 event.preventDefault();
             }
         });
-
         document.addEventListener('DOMContentLoaded', () => {
             const createInvoiceButton = document.getElementById('invoice-button');
             console.log(createInvoiceButton);
